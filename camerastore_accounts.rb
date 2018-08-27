@@ -4,8 +4,8 @@ get '/login' do
 end
 
 post '/login' do
-  customer = Customer.find_by_username(params['username'])
-  if customer != nil && customer.valid_password?(params['password'])
+  customer = Customer.find_one_by(username: params['username'])
+  if customer != nil && valid_password?(customer.password, params['password'])
     session[:customer_id] = customer.id
     if session.has_key? :target_url
       target_url = session[:target_url]
@@ -30,11 +30,16 @@ get '/register' do
 end
 
 post '/register' do
-  customer = Customer.new(firstName: params['firstName'],
-                          lastName: params['lastName'],
+  customer = Customer.new(first_name: params['first_name'],
+                          last_name: params['last_name'],
                           email: params['email'],
                           username: params['username'],
-                          password: params['password'])
-  customer.create()
-  redirect to('/login')
+                          password: params['password'],
+                          status: 'enabled')
+  if params['password'] == params['confirm_password'] && customer.valid?
+    customer.create
+    redirect to('/login')
+  else
+    erb :register, layout: :simple_layout, views: 'views/account', layout_options: { views: 'views' }
+  end
 end

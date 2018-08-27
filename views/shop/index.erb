@@ -103,7 +103,7 @@
 			<% for p in coll.products %>
 			<li>
 				<a href="/products/<%= p.id %>">
-					<img src="<%=p.mainPhoto.url%>" class="img-responsive" alt="" />
+					<img src="<%=p.main_photo.url%>" class="img-responsive" alt="" />
 				</a>
 				<div class="product liked-product simpleCart_shelfItem">
 					<a class="like_name" href="/products/<%= p.id %>"><%= p.title %></a>

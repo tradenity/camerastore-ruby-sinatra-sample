@@ -19,7 +19,8 @@ end
 
 
 before do
-  HttpClient.get_instance.current_session(session)
+  Configuration.default.session_token_holder.session = session
+  # HttpClient.get_instance.current_session(session)
 end
 
 

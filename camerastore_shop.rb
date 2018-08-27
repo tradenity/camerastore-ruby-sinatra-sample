@@ -5,18 +5,19 @@ get '/' do
 end
 
 
+# get '/products' do
+#   raise SessionExpiredException.new(nil)
+# end
+
 get '/products' do
-  raise SessionExpiredException.new(nil)
-end
-get '/products_' do
   if params.has_key? 'query'
-    products =  Product.find_all(title: params['query'])
+    products =  Product.find_all_by(title: params['query'])
   else
     products =  Product.find_all
   end
   brands =  Brand.find_all
   categories =  Category.find_all
-  featured =  Collection.find_one(name: 'featured')
+  featured =  Collection.find_one_by(name: 'featured')
   erb :products_layout, layout: :layout, locals: {categories: categories, brands: brands, featured: featured, cart: ShoppingCart.get }do
     erb :products, locals: {products: products, featured: featured}, views: 'views/shop', layout_options: { views: 'views' }
   end
@@ -25,8 +26,8 @@ end
 get '/categories/:id' do
   brands =  Brand.find_all
   categories =  Category.find_all
-  products =  Product.find_all(category: params['id'])
-  featured =  Collection.find_one(name: 'featured')
+  products =  Product.find_all_by(categories__contains: params['id'])
+  featured =  Collection.find_one_by(name: 'featured')
   erb :products_layout, layout: :layout, locals: {categories: categories, brands: brands, featured: featured, cart:  ShoppingCart.get }do
     erb :products, views: 'views/shop', layout_options: { views: 'views' }, locals: {products: products, featured: featured}
   end
@@ -35,8 +36,8 @@ end
 get '/brands/:id' do
   brands =  Brand.find_all
   categories =  Category.find_all
-  products =  Product.find_all(brand: params['id'])
-  featured =  Collection.find_one(name: 'featured')
+  products =  Product.find_all_by(brand: params['id'])
+  featured =  Collection.find_one_by(name: 'featured')
   erb :products_layout, layout: :layout, locals: {categories: categories, brands: brands, featured: featured, cart:  ShoppingCart.get}do
     erb :products, views: 'views/shop', layout_options: { views: 'views' }, locals: {products: products, featured: featured}
   end
@@ -46,7 +47,7 @@ get '/products/:id' do
   brands =  Brand.find_all
   categories =  Category.find_all
   product =  Product.find_by_id(params['id'])
-  featured =  Collection.find_one(name: 'featured')
+  featured =  Collection.find_one_by(name: 'featured')
   erb :products_layout, layout: :layout, locals: {categories: categories, brands: brands, featured: featured, cart: ShoppingCart.get} do
     erb :single, locals: {product: product}, views: 'views/shop', layout_options: { views: 'views' }
   end

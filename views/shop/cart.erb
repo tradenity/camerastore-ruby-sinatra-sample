@@ -17,7 +17,7 @@
 			<div class="clearfix"></div>
 		</div>
 		<h2>MY SHOPPING CART </h2>
-		<% if cart.count <= 0 %>
+		<% if cart.items.size <= 0 %>
 			<h1>No Items in your cart yet</h1>
 		<% else %>
 			<div class="cart-gd">
@@ -54,17 +54,17 @@
 					<a href="#" class="close1 deleteItem" data-item-id="<%= item.id %>"> </a>
 					<div class="cart-sec simpleCart_shelfItem">
 						<div class="cart-item cyc">
-							<img src="<%= item.product.mainPhoto.url %>" class="img-responsive" alt="" />
+							<img src="<%= item.product.main_photo.original_url %>" class="img-responsive" alt="" />
 						</div>
 						<div class="cart-item-info">
 							<h3><a href="#"> <%= item.product.title %> </a></h3>
 
 							<div class="delivery">
-								<p><span>Unit Price : $</span> <span><%= item.unitPrice %></span></p>
+								<p><span>Unit Price : $</span> <span><%= item.unit_price / 100 %></span></p>
 								<div class="clearfix"></div>
 								<p><span>Quantity : $</span> <span><%= item.quantity %></span></p>
 								<div class="clearfix"></div>
-								<p><span>Total Price : $</span> <span><%= item.total %></span></p>
+								<p><span>Total Price : $</span> <span><%= item.total / 100 %></span></p>
 								<div class="clearfix"></div>
 							</div>
 						</div>

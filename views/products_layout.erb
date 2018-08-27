@@ -28,7 +28,7 @@
 			<% for p in featured.products %>
 			<li>
 				<a href="/products/<%= p.id %>">
-					<img src="<%= p.mainPhoto.url %>" style="width: 220px;" class="img-responsive"/>
+					<img src="<%= p.main_photo.url %>" style="width: 220px;" class="img-responsive"/>
 				</a>
 				<div class="product liked-product simpleCart_shelfItem">
 					<a class="like_name" href="/products/<%= p.id %>"><%= p.title %></a>

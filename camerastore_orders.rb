@@ -7,13 +7,13 @@ before '/orders*' do
 end
 
 get '/orders' do
-  orders = Order.find_all_by_customer(session[:customer_id])
+  orders = Order.find_all_by(customer:  session[:customer_id])
   erb :index, layout: :simple_layout, views: 'views/orders', layout_options: { views: 'views' }, locals: {orders: orders}
 end
 
 get '/orders/checkout' do
   customer = Customer.find_by_id session[:customer_id]
-  order = Order.new(customer: customer, billingAddress: create_address, shippingAddress: create_address)
+  order = Order.new(customer: customer, billing_address: create_address, shipping_address: create_address)
   erb :checkout, layout: :simple_layout, views: 'views/orders', layout_options: { views: 'views' }, locals: {order: order}
 end
 

@@ -4,8 +4,8 @@
 		<div class="flexslider">
 			<ul class="slides">
 				<% for ph in product.photos %>
-					<li data-thumb="<%=ph.url%>">
-						<div class="thumb-image"> <img src="<%=ph.url%>" data-imagezoom="true" class="img-responsive" alt="" /> </div>
+					<li data-thumb="<%=ph.original_url%>">
+						<div class="thumb-image"> <img src="<%=ph.original_url%>" data-imagezoom="true" class="img-responsive" alt="" /> </div>
 					</li>
 				<% end %>
 			</ul>
@@ -16,7 +16,7 @@
 			<h3><%= product.title %></h3>
 			<span>$ <%= product.price %></span>
 			<div class="clearfix"></div>
-			<p><%= product.description %></p>
+			<p><%= product.full_description %></p>
 
 		</div>
 

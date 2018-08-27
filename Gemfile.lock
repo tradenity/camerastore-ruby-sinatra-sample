@@ -1,52 +1,33 @@
+PATH
+  remote: C:/Users/Joseph/Documents/development/multiproject/estore_project/init-ruby-sdk
+  specs:
+    tradenity-sdk (1.0.0)
+      json (~> 2.1, >= 2.1.0)
+      typhoeus (~> 1.0, >= 1.0.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
-    addressable (2.3.8)
-    axiom-types (0.1.1)
-      descendants_tracker (~> 0.0.4)
-      ice_nine (~> 0.11.0)
-      thread_safe (~> 0.3, >= 0.3.1)
-    bcrypt (3.1.11)
-    bcrypt (3.1.11-x64-mingw32)
-    coercible (1.0.0)
-      descendants_tracker (~> 0.0.1)
-    daemons (1.2.3)
-    descendants_tracker (0.0.4)
-      thread_safe (~> 0.3, >= 0.3.1)
-    equalizer (0.0.11)
-    eventmachine (1.2.0.1)
-    eventmachine (1.2.0.1-x64-mingw32)
-    ice_nine (0.11.2)
-    json (1.8.3)
-    mime-types (1.25.1)
-    rack (1.6.4)
-    rack-protection (1.5.3)
+    bcrypt (3.1.12)
+    bcrypt (3.1.12-x64-mingw32)
+    ethon (0.11.0)
+      ffi (>= 1.3.0)
+    ffi (1.9.25)
+    ffi (1.9.25-x64-mingw32)
+    json (2.1.0)
+    mustermann (1.0.3)
+    rack (2.0.5)
+    rack-protection (2.0.3)
       rack
-    rest-client (1.6.9)
-      mime-types (~> 1.16)
-    sinatra (1.4.7)
-      rack (~> 1.5)
-      rack-protection (~> 1.4)
-      tilt (>= 1.3, < 3)
-    thin (1.6.4)
-      daemons (~> 1.0, >= 1.0.9)
-      eventmachine (~> 1.0, >= 1.0.4)
-      rack (~> 1.0)
-    thread_safe (0.3.5)
-    tilt (2.0.2)
-    tradenity (0.1.1)
-      bcrypt (~> 3.1, >= 3.1.1)
-      unirest (~> 1.1, >= 1.1.2)
-      virtus (~> 1.0, >= 1.0.5)
-    unirest (1.1.2)
-      addressable (~> 2.3.5)
-      json (~> 1.8.1)
-      rest-client (~> 1.6.7)
-    virtus (1.0.5)
-      axiom-types (~> 0.1)
-      coercible (~> 1.0)
-      descendants_tracker (~> 0.0, >= 0.0.3)
-      equalizer (~> 0.0, >= 0.0.9)
+    sinatra (2.0.3)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.3)
+      tilt (~> 2.0)
+    tilt (2.0.8)
+    typhoeus (1.3.0)
+      ethon (>= 0.9.0)
+    webrick (1.4.2)
 
 PLATFORMS
   ruby
@@ -55,8 +36,8 @@ PLATFORMS
 DEPENDENCIES
   bcrypt
   sinatra
-  thin
-  tradenity (= 0.1.1)
+  tradenity-sdk!
+  webrick
 
 BUNDLED WITH
-   1.13.3
+   1.16.0

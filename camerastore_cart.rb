@@ -5,13 +5,13 @@ get '/cart' do
 end
 
 post '/cart/add' do
-  cart = ShoppingCart.add(LineItem.new(product: Product.new(id: params['product']), quantity: params['quantity']))
+  cart = ShoppingCart.add_item(LineItem.new(product: Product.new(id: params['product']), quantity: params['quantity']))
   content_type :json
-  { total: cart.total, count: cart.count }.to_json
+  { total: cart.total, count: cart.items.size }.to_json
 end
 
 post '/cart/remove/:id' do
-  cart = ShoppingCart.remove(params['id'])
+  cart = ShoppingCart.delete_item(params['id'])
   content_type :json
-  { total: cart.total, count: cart.count }.to_json
+  { total: cart.total, count: cart.items.size }.to_json
 end
