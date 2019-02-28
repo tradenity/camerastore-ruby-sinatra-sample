@@ -7,8 +7,8 @@
 	<div class="new-product-top">
 		<ul class="product-top-list">
 			<li><a href="/">Home</a>&nbsp;<span>&gt;</span></li>
-			<li><span class="act" th:text="${breadcrumb}">Best Sales</span>&nbsp;</li>
-			<li><span class="act" th:text="${breadcrumbName}">Best Sales</span>&nbsp;</li>
+			<li><span class="act" >Best Sales</span>&nbsp;</li>
+			<li><span class="act" >Best Sales</span>&nbsp;</li>
 		</ul>
 		<p class="back"><a href="/products">Browse all products</a></p>
 		<div class="clearfix"></div>
@@ -63,9 +63,9 @@
 												</div>
 												<div class="product_container">
 													<div class="cart-left">
-														<p class="title"><%= p.title %></p>
+														<p class="title"><%= p.name %></p>
 													</div>
-													<div class="pricey"><span class="item_price" >$ <%= p.price %></span></div>
+													<div class="pricey"><span class="item_price" >$ <%= p.price / 100.0 %></span></div>
 													<div class="clearfix"></div>
 												</div>
 											</div>
@@ -77,7 +77,7 @@
 							<div class="cbp-vm-details">
 								<%= p.short_description %>
 							</div>
-							<a class="cbp-vm-icon cbp-vm-add item_add add_to_cart_button" data-product_id="<%=p.id%>" href="#">Add to cart</a>
+							<a class="cbp-vm-icon cbp-vm-add item_add add_to_cart_button" data-product_id="<%=p.id %>" href="#">Add to cart</a>
 						</div>
 					</li>
 			<% end %>

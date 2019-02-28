@@ -54,17 +54,17 @@
 					<a href="#" class="close1 deleteItem" data-item-id="<%= item.id %>"> </a>
 					<div class="cart-sec simpleCart_shelfItem">
 						<div class="cart-item cyc">
-							<img src="<%= item.product.main_photo.original_url %>" class="img-responsive" alt="" />
+							<img src="<%= item.product.main_photo.url %>" class="img-responsive" alt="" />
 						</div>
 						<div class="cart-item-info">
-							<h3><a href="#"> <%= item.product.title %> </a></h3>
+							<h3><a href="#"> <%= item.product.name %> </a></h3>
 
 							<div class="delivery">
-								<p><span>Unit Price : $</span> <span><%= item.unit_price / 100 %></span></p>
+								<p><span>Unit Price : $</span> <span><%= item.unit_price / 100.0 %></span></p>
 								<div class="clearfix"></div>
 								<p><span>Quantity : $</span> <span><%= item.quantity %></span></p>
 								<div class="clearfix"></div>
-								<p><span>Total Price : $</span> <span><%= item.total / 100 %></span></p>
+								<p><span>Total Price : $</span> <span><%= item.total / 100.0 %></span></p>
 								<div class="clearfix"></div>
 							</div>
 						</div>

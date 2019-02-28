@@ -1,0 +1,15 @@
+<form id="shipping-method-form" action="/orders/shipping" method="post">
+  <ul>
+    <li class="text-info">Shipping method: </li>
+    <li>
+      <select name="shipping_method" >
+        <%for sm in shipping_methods %>
+          <option value="<%= sm.id %>"><%= sm.name %></option>
+        <% end %>
+      </select>
+    </li>
+  </ul>
+  <p style="display: none;" id="shipping_error_message"></p>
+  <input type="submit" value="Submit" />
+</form>
+

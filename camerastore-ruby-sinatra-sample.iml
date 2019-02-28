@@ -5,5 +5,30 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="tradenity-sdk (v[path]) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="3" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../../multiproject/estore_project/init-ruby-sdk/lib" />
+          <root url="file://$MODULE_DIR$/../../../multiproject/estore_project/init-ruby-sdk/docs" />
+          <root url="file://$MODULE_DIR$/../../../multiproject/estore_project/init-ruby-sdk/spec" />
+          <root url="file://$MODULE_DIR$/../../../multiproject/estore_project/init-ruby-sdk/.swagger-codegen" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../../../multiproject/estore_project/init-ruby-sdk/lib" />
+          <root url="file://$MODULE_DIR$/../../../multiproject/estore_project/init-ruby-sdk/docs" />
+          <root url="file://$MODULE_DIR$/../../../multiproject/estore_project/init-ruby-sdk/spec" />
+          <root url="file://$MODULE_DIR$/../../../multiproject/estore_project/init-ruby-sdk/.swagger-codegen" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/../../../multiproject/estore_project/init-ruby-sdk/docs" />
+          <root url="file://$MODULE_DIR$/../../../multiproject/estore_project/init-ruby-sdk/spec" />
+          <root url="file://$MODULE_DIR$/../../../multiproject/estore_project/init-ruby-sdk/.swagger-codegen" />
+        </excluded>
+      </library>
+    </orderEntry>
   </component>
 </module>

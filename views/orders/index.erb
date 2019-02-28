@@ -38,13 +38,13 @@
             <% for o in orders %>
                 <tr>
                   <td>
-                    <a href="/orders/<%= o.id%>"><%= o.id %></a>
+                    <a href="/orders/<%= o.id %>"><%= o.id %></a>
                   </td>
-                  <td><%= o.createdAt %></td>
-                  <td><%= o.total %></td>
+                  <td><%= o.created_at %></td>
+                  <td><%= o.total / 100.0 %></td>
                   <td><%= o.status %></td>
                   <td>
-                    <form action="/orders/refund/<%= o.id%>" method="post">
+                    <form action="/orders/refund/<%= o.id %>" method="post">
                       <input type="submit" value="Refund"/>
                     </form>
                   </td>
